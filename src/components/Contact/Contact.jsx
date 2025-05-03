@@ -2,13 +2,13 @@ import { FaPhone } from "react-icons/fa6";
 import { BsPeopleFill } from "react-icons/bs";
 import s from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 export const Contact = ({ contact: { name, number, id } }) => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
-  const deleteUser = () => {
-    dispath(deleteContact(id));
+  const handleDeleteContact = () => {
+    dispatch(deleteContact(id));
   };
   return (
     <div className={s.wrapper}>
@@ -22,7 +22,7 @@ export const Contact = ({ contact: { name, number, id } }) => {
           <p>{number}</p>
         </div>
       </div>
-      <button className={s.buttonDelete} onClick={deleteUser}>
+      <button className={s.buttonDelete} onClick={handleDeleteContact}>
         Delete
       </button>
     </div>

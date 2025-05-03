@@ -5,10 +5,10 @@ import { useId } from "react";
 
 export const SearchBox = ({ value, onChange }) => {
   const searchId = useId();
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   const onSearch = (filter) => {
-    dispath(changeFilter(filter));
+    dispatch(changeFilter(filter));
   };
 
   return (
